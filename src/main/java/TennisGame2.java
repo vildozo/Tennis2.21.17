@@ -35,8 +35,8 @@ public class TennisGame2 implements TennisGame
             return "Deuce";
         if (player1Points > puntoLove && player2Points==puntoLove && player1Points<=punto40)
         	return convertPointsToLiteral(player1Points) + "-Love"; 
-        if (player2Points > puntoLove && player1Points==puntoLove)
-        	score =  "Love" + convertPointsToLiteral(player2Points); 
+        if (player2Points > puntoLove && player1Points==puntoLove && player2Points<=punto40)
+        	return  "Love-" + convertPointsToLiteral(player2Points); 
         if (player1Points>player2Points && player1Points < gamePoint)     
         	return convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
         if (player2Points>player1Points && player2Points < gamePoint)
@@ -45,9 +45,9 @@ public class TennisGame2 implements TennisGame
             score = "Advantage player1";    
         if (player2Points > player1Points && player1Points >= punto40)
             score = "Advantage player2";
-        if (player1Points>=4 && player2Points>=puntoLove && (player1Points-player2Points)>=2)
+        if (player1Points>=gamePoint && player2Points>=puntoLove && (player1Points-player2Points)>=2)
             return "Win for player1";
-        if (player2Points>=4 && player1Points>=puntoLove && (player2Points-player1Points)>=2)
+        if (player2Points>=gamePoint && player1Points>=puntoLove && (player2Points-player1Points)>=2)
             return "Win for player2";
         return score;
     }
