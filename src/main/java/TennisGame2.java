@@ -1,11 +1,11 @@
 
 public class TennisGame2 implements TennisGame
 {
-    private static final int gamePoint = 4;
-	private static final int punto40 = 3;
-	private static final int punto30 = 2;
-	private static final int punto15 = 1;
 	private static final int puntoLove = 0;
+	private static final int punto15 = 1;
+	private static final int punto30 = 2;
+	private static final int punto40 = 3;
+    private static final int gamePoint = 4;
 	public int player1Points = 0;
     public int player2Points = 0;
     
