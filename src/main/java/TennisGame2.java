@@ -32,57 +32,25 @@ public class TennisGame2 implements TennisGame
     public String getScore(){
         String score = "";
         if (player1Points == player2Points && player1Points < gamePoint)
-        {
-        	score= convertPointsToLiteral(player1Points);  
-            score += "-All";
-        }
+        	score= convertPointsToLiteral(player1Points) + "-All";  
         if (player1Points==player2Points && player1Points>=punto40)
             score = "Deuce";
-        
         if (player1Points > puntoLove && player2Points==puntoLove)
-        {
-            player1LiteralScore = convertPointsToLiteral(player1Points); 
-            player2LiteralScore = "Love";
-            score = player1LiteralScore + "-" + player2LiteralScore;
-        }
+        	score = convertPointsToLiteral(player1Points) + "Love"; 
         if (player2Points > puntoLove && player1Points==puntoLove)
-        {
-            player2LiteralScore =  convertPointsToLiteral(player2Points); 
-            player1LiteralScore = "Love";
-            score = player1LiteralScore + "-" + player2LiteralScore;
-        }
-        
-        if (player1Points>player2Points && player1Points < gamePoint)
-        {       
-                player1LiteralScore= convertPointsToLiteral(player1Points); 
-                player2LiteralScore= convertPointsToLiteral(player2Points); 
-            score = player1LiteralScore + "-" + player2LiteralScore;
-        }
+        	score =  "Love" + convertPointsToLiteral(player2Points); 
+        if (player1Points>player2Points && player1Points < gamePoint)     
+            score = convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
         if (player2Points>player1Points && player2Points < gamePoint)
-        {
-        	player2LiteralScore= convertPointsToLiteral(player2Points); 
-            player1LiteralScore= convertPointsToLiteral(player1Points); 
-            score = player1LiteralScore + "-" + player2LiteralScore;
-        }
-        
+        	score = convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
         if (player1Points > player2Points && player2Points >= punto40)
-        {
-            score = "Advantage player1";
-        }
-        
+            score = "Advantage player1";    
         if (player2Points > player1Points && player1Points >= punto40)
-        {
             score = "Advantage player2";
-        }
-        
         if (player1Points>=4 && player2Points>=puntoLove && (player1Points-player2Points)>=2)
-        {
             score = "Win for player1";
-        }
         if (player2Points>=4 && player1Points>=puntoLove && (player2Points-player1Points)>=2)
-        {
             score = "Win for player2";
-        }
         return score;
     }
     
