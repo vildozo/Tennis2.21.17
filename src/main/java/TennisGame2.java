@@ -28,7 +28,6 @@ public class TennisGame2 implements TennisGame
     }
     
     public String getScore(){
-        String score = "";
         if (player1Points == player2Points && player1Points < punto40)
         	return convertPointsToLiteral(player1Points) + "-All";  
         if (player1Points==player2Points && player1Points>=punto40)
@@ -41,15 +40,15 @@ public class TennisGame2 implements TennisGame
         	return convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
         if (player2Points>player1Points && player2Points < gamePoint)
         	return convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
-        if (player1Points > player2Points && player2Points >= punto40)
-            score = "Advantage player1";    
-        if (player2Points > player1Points && player1Points >= punto40)
-            score = "Advantage player2";
-        if (player1Points>=gamePoint && player2Points>=puntoLove && (player1Points-player2Points)>=2)
+        if (player1Points > player2Points && player2Points >= punto40 && (player1Points - player2Points == 1) )
+            return "Advantage player1";    
+        if (player2Points > player1Points && player1Points >= punto40 && (player2Points - player1Points == 1))
+            return "Advantage player2";
+        if (player1Points>=gamePoint && player2Points>=puntoLove && ((player1Points-player2Points)>=2))
             return "Win for player1";
         if (player2Points>=gamePoint && player1Points>=puntoLove && (player2Points-player1Points)>=2)
             return "Win for player2";
-        return score;
+        return "";
     }
     
     public void SetP1Score(int number){
