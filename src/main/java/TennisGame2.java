@@ -1,7 +1,8 @@
 
 public class TennisGame2 implements TennisGame
 {
-    public int player1Points = 0;
+    private static final int puntoLove = 0;
+	public int player1Points = 0;
     public int player2Points = 0;
     
     public String player1LiteralScore = "";
@@ -11,11 +12,12 @@ public class TennisGame2 implements TennisGame
     public TennisGame2() {
     }
 
+    
     public String getScore(){
         String score = "";
         if (player1Points == player2Points && player1Points < 4)
         {
-            if (player1Points==0)
+            if (player1Points==puntoLove)
                 score = "Love";
             if (player1Points==1)
                 score = "Fifteen";
@@ -26,7 +28,7 @@ public class TennisGame2 implements TennisGame
         if (player1Points==player2Points && player1Points>=3)
             score = "Deuce";
         
-        if (player1Points > 0 && player2Points==0)
+        if (player1Points > puntoLove && player2Points==puntoLove)
         {
             if (player1Points==1)
                 player1LiteralScore = "Fifteen";
@@ -38,7 +40,7 @@ public class TennisGame2 implements TennisGame
             player2LiteralScore = "Love";
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
-        if (player2Points > 0 && player1Points==0)
+        if (player2Points > puntoLove && player1Points==puntoLove)
         {
             if (player2Points==1)
                 player2LiteralScore = "Fifteen";
@@ -86,11 +88,11 @@ public class TennisGame2 implements TennisGame
             score = "Advantage player2";
         }
         
-        if (player1Points>=4 && player2Points>=0 && (player1Points-player2Points)>=2)
+        if (player1Points>=4 && player2Points>=puntoLove && (player1Points-player2Points)>=2)
         {
             score = "Win for player1";
         }
-        if (player2Points>=4 && player1Points>=0 && (player2Points-player1Points)>=2)
+        if (player2Points>=4 && player1Points>=puntoLove && (player2Points-player1Points)>=2)
         {
             score = "Win for player2";
         }
