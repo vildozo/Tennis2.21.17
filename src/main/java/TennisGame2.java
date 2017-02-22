@@ -1,7 +1,8 @@
 
 public class TennisGame2 implements TennisGame
 {
-    private static final int punto15 = 1;
+    private static final int punto30 = 2;
+	private static final int punto15 = 1;
 	private static final int puntoLove = 0;
 	public int player1Points = 0;
     public int player2Points = 0;
@@ -22,7 +23,7 @@ public class TennisGame2 implements TennisGame
                 score = "Love";
             if (player1Points==punto15)
                 score = "Fifteen";
-            if (player1Points==2)
+            if (player1Points==punto30)
                 score = "Thirty";
             score += "-All";
         }
@@ -33,7 +34,7 @@ public class TennisGame2 implements TennisGame
         {
             if (player1Points==punto15)
                 player1LiteralScore = "Fifteen";
-            if (player1Points==2)
+            if (player1Points==punto30)
                 player1LiteralScore = "Thirty";
             if (player1Points==3)
                 player1LiteralScore = "Forty";
@@ -45,7 +46,7 @@ public class TennisGame2 implements TennisGame
         {
             if (player2Points==punto15)
                 player2LiteralScore = "Fifteen";
-            if (player2Points==2)
+            if (player2Points==punto30)
                 player2LiteralScore = "Thirty";
             if (player2Points==3)
                 player2LiteralScore = "Forty";
@@ -56,25 +57,25 @@ public class TennisGame2 implements TennisGame
         
         if (player1Points>player2Points && player1Points < 4)
         {
-            if (player1Points==2)
+            if (player1Points==punto30)
                 player1LiteralScore="Thirty";
             if (player1Points==3)
                 player1LiteralScore="Forty";
             if (player2Points==punto15)
                 player2LiteralScore="Fifteen";
-            if (player2Points==2)
+            if (player2Points==punto30)
                 player2LiteralScore="Thirty";
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
         if (player2Points>player1Points && player2Points < 4)
         {
-            if (player2Points==2)
+            if (player2Points==punto30)
                 player2LiteralScore="Thirty";
             if (player2Points==3)
                 player2LiteralScore="Forty";
             if (player1Points==punto15)
                 player1LiteralScore="Fifteen";
-            if (player1Points==2)
+            if (player1Points==punto30)
                 player1LiteralScore="Thirty";
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
