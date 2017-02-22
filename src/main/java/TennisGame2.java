@@ -1,7 +1,8 @@
 
 public class TennisGame2 implements TennisGame
 {
-    private static final int punto40 = 3;
+    private static final int gamePoint = 4;
+	private static final int punto40 = 3;
 	private static final int punto30 = 2;
 	private static final int punto15 = 1;
 	private static final int puntoLove = 0;
@@ -18,7 +19,7 @@ public class TennisGame2 implements TennisGame
     
     public String getScore(){
         String score = "";
-        if (player1Points == player2Points && player1Points < 4)
+        if (player1Points == player2Points && player1Points < gamePoint)
         {
             if (player1Points==puntoLove)
                 score = "Love";
@@ -56,7 +57,7 @@ public class TennisGame2 implements TennisGame
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
         
-        if (player1Points>player2Points && player1Points < 4)
+        if (player1Points>player2Points && player1Points < gamePoint)
         {
             if (player1Points==punto30)
                 player1LiteralScore="Thirty";
@@ -68,7 +69,7 @@ public class TennisGame2 implements TennisGame
                 player2LiteralScore="Thirty";
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
-        if (player2Points>player1Points && player2Points < 4)
+        if (player2Points>player1Points && player2Points < gamePoint)
         {
             if (player2Points==punto30)
                 player2LiteralScore="Thirty";
