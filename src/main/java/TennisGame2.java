@@ -47,39 +47,21 @@ public class TennisGame2 implements TennisGame
         }
         if (player2Points > puntoLove && player1Points==puntoLove)
         {
-            if (player2Points==punto15)
-                player2LiteralScore = "Fifteen";
-            if (player2Points==punto30)
-                player2LiteralScore = "Thirty";
-            if (player2Points==punto40)
-                player2LiteralScore = "Forty";
-            
+            player2LiteralScore =  convertPointsToLiteral(player2Points); 
             player1LiteralScore = "Love";
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
         
         if (player1Points>player2Points && player1Points < gamePoint)
-        {
-            if (player1Points==punto30)
-                player1LiteralScore="Thirty";
-            if (player1Points==3)
-                player1LiteralScore="Forty";
-            if (player2Points==punto15)
-                player2LiteralScore="Fifteen";
-            if (player2Points==punto30)
-                player2LiteralScore="Thirty";
+        {       
+                player1LiteralScore= convertPointsToLiteral(player1Points); 
+                player2LiteralScore= convertPointsToLiteral(player2Points); 
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
         if (player2Points>player1Points && player2Points < gamePoint)
         {
-            if (player2Points==punto30)
-                player2LiteralScore="Thirty";
-            if (player2Points==3)
-                player2LiteralScore="Forty";
-            if (player1Points==punto15)
-                player1LiteralScore="Fifteen";
-            if (player1Points==punto30)
-                player1LiteralScore="Thirty";
+        	player2LiteralScore= convertPointsToLiteral(player2Points); 
+            player1LiteralScore= convertPointsToLiteral(player1Points); 
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
         
