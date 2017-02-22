@@ -4,8 +4,8 @@ public class TennisGame2 implements TennisGame
     public int player1Points = 0;
     public int player2Points = 0;
     
-    public String P1res = "";
-    public String P2res = "";
+    public String player1LiteralScore = "";
+    public String player2LiteralScore = "";
 
 
     public TennisGame2() {
@@ -29,51 +29,51 @@ public class TennisGame2 implements TennisGame
         if (player1Points > 0 && player2Points==0)
         {
             if (player1Points==1)
-                P1res = "Fifteen";
+                player1LiteralScore = "Fifteen";
             if (player1Points==2)
-                P1res = "Thirty";
+                player1LiteralScore = "Thirty";
             if (player1Points==3)
-                P1res = "Forty";
+                player1LiteralScore = "Forty";
             
-            P2res = "Love";
-            score = P1res + "-" + P2res;
+            player2LiteralScore = "Love";
+            score = player1LiteralScore + "-" + player2LiteralScore;
         }
         if (player2Points > 0 && player1Points==0)
         {
             if (player2Points==1)
-                P2res = "Fifteen";
+                player2LiteralScore = "Fifteen";
             if (player2Points==2)
-                P2res = "Thirty";
+                player2LiteralScore = "Thirty";
             if (player2Points==3)
-                P2res = "Forty";
+                player2LiteralScore = "Forty";
             
-            P1res = "Love";
-            score = P1res + "-" + P2res;
+            player1LiteralScore = "Love";
+            score = player1LiteralScore + "-" + player2LiteralScore;
         }
         
         if (player1Points>player2Points && player1Points < 4)
         {
             if (player1Points==2)
-                P1res="Thirty";
+                player1LiteralScore="Thirty";
             if (player1Points==3)
-                P1res="Forty";
+                player1LiteralScore="Forty";
             if (player2Points==1)
-                P2res="Fifteen";
+                player2LiteralScore="Fifteen";
             if (player2Points==2)
-                P2res="Thirty";
-            score = P1res + "-" + P2res;
+                player2LiteralScore="Thirty";
+            score = player1LiteralScore + "-" + player2LiteralScore;
         }
         if (player2Points>player1Points && player2Points < 4)
         {
             if (player2Points==2)
-                P2res="Thirty";
+                player2LiteralScore="Thirty";
             if (player2Points==3)
-                P2res="Forty";
+                player2LiteralScore="Forty";
             if (player1Points==1)
-                P1res="Fifteen";
+                player1LiteralScore="Fifteen";
             if (player1Points==2)
-                P1res="Thirty";
-            score = P1res + "-" + P2res;
+                player1LiteralScore="Thirty";
+            score = player1LiteralScore + "-" + player2LiteralScore;
         }
         
         if (player1Points > player2Points && player2Points >= 3)
