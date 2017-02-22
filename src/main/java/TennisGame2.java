@@ -16,17 +16,24 @@ public class TennisGame2 implements TennisGame
     public TennisGame2() {
     }
 
+    public String convertPointsToLiteral(int points)
+    {
+    	if (points==puntoLove)
+            return "Love";
+        if (points==punto15)
+        	return "Fifteen";
+        if (points==punto30)
+        	return "Thirty";
+        if (points==punto40)
+        	return "Forty";
+        return"";
+    }
     
     public String getScore(){
         String score = "";
         if (player1Points == player2Points && player1Points < gamePoint)
         {
-            if (player1Points==puntoLove)
-                score = "Love";
-            if (player1Points==punto15)
-                score = "Fifteen";
-            if (player1Points==punto30)
-                score = "Thirty";
+        	score= convertPointsToLiteral(player1Points);  
             score += "-All";
         }
         if (player1Points==player2Points && player1Points>=punto40)
@@ -34,13 +41,7 @@ public class TennisGame2 implements TennisGame
         
         if (player1Points > puntoLove && player2Points==puntoLove)
         {
-            if (player1Points==punto15)
-                player1LiteralScore = "Fifteen";
-            if (player1Points==punto30)
-                player1LiteralScore = "Thirty";
-            if (player1Points==punto40)
-                player1LiteralScore = "Forty";
-            
+            player1LiteralScore = convertPointsToLiteral(player1Points); 
             player2LiteralScore = "Love";
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
