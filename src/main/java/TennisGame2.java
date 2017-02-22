@@ -9,8 +9,6 @@ public class TennisGame2 implements TennisGame
 	public int player1Points = 0;
     public int player2Points = 0;
     
-    public String player1LiteralScore = "";
-    public String player2LiteralScore = "";
 
 
     public TennisGame2() {
@@ -31,26 +29,26 @@ public class TennisGame2 implements TennisGame
     
     public String getScore(){
         String score = "";
-        if (player1Points == player2Points && player1Points < gamePoint)
-        	score= convertPointsToLiteral(player1Points) + "-All";  
+        if (player1Points == player2Points && player1Points < punto40)
+        	return convertPointsToLiteral(player1Points) + "-All";  
         if (player1Points==player2Points && player1Points>=punto40)
-            score = "Deuce";
-        if (player1Points > puntoLove && player2Points==puntoLove)
-        	score = convertPointsToLiteral(player1Points) + "Love"; 
+            return "Deuce";
+        if (player1Points > puntoLove && player2Points==puntoLove && player1Points<=punto40)
+        	return convertPointsToLiteral(player1Points) + "-Love"; 
         if (player2Points > puntoLove && player1Points==puntoLove)
         	score =  "Love" + convertPointsToLiteral(player2Points); 
         if (player1Points>player2Points && player1Points < gamePoint)     
-            score = convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
+        	return convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
         if (player2Points>player1Points && player2Points < gamePoint)
-        	score = convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
+        	return convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
         if (player1Points > player2Points && player2Points >= punto40)
             score = "Advantage player1";    
         if (player2Points > player1Points && player1Points >= punto40)
             score = "Advantage player2";
         if (player1Points>=4 && player2Points>=puntoLove && (player1Points-player2Points)>=2)
-            score = "Win for player1";
+            return "Win for player1";
         if (player2Points>=4 && player1Points>=puntoLove && (player2Points-player1Points)>=2)
-            score = "Win for player2";
+            return "Win for player2";
         return score;
     }
     
