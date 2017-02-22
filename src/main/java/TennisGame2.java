@@ -1,7 +1,8 @@
 
 public class TennisGame2 implements TennisGame
 {
-    private static final int punto30 = 2;
+    private static final int punto40 = 3;
+	private static final int punto30 = 2;
 	private static final int punto15 = 1;
 	private static final int puntoLove = 0;
 	public int player1Points = 0;
@@ -27,7 +28,7 @@ public class TennisGame2 implements TennisGame
                 score = "Thirty";
             score += "-All";
         }
-        if (player1Points==player2Points && player1Points>=3)
+        if (player1Points==player2Points && player1Points>=punto40)
             score = "Deuce";
         
         if (player1Points > puntoLove && player2Points==puntoLove)
@@ -36,7 +37,7 @@ public class TennisGame2 implements TennisGame
                 player1LiteralScore = "Fifteen";
             if (player1Points==punto30)
                 player1LiteralScore = "Thirty";
-            if (player1Points==3)
+            if (player1Points==punto40)
                 player1LiteralScore = "Forty";
             
             player2LiteralScore = "Love";
@@ -48,7 +49,7 @@ public class TennisGame2 implements TennisGame
                 player2LiteralScore = "Fifteen";
             if (player2Points==punto30)
                 player2LiteralScore = "Thirty";
-            if (player2Points==3)
+            if (player2Points==punto40)
                 player2LiteralScore = "Forty";
             
             player1LiteralScore = "Love";
@@ -80,12 +81,12 @@ public class TennisGame2 implements TennisGame
             score = player1LiteralScore + "-" + player2LiteralScore;
         }
         
-        if (player1Points > player2Points && player2Points >= 3)
+        if (player1Points > player2Points && player2Points >= punto40)
         {
             score = "Advantage player1";
         }
         
-        if (player2Points > player1Points && player1Points >= 3)
+        if (player2Points > player1Points && player1Points >= punto40)
         {
             score = "Advantage player2";
         }
