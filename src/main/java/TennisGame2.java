@@ -1,7 +1,8 @@
 
 public class TennisGame2 implements TennisGame
 {
-    private static final int puntoLove = 0;
+    private static final int punto15 = 1;
+	private static final int puntoLove = 0;
 	public int player1Points = 0;
     public int player2Points = 0;
     
@@ -19,7 +20,7 @@ public class TennisGame2 implements TennisGame
         {
             if (player1Points==puntoLove)
                 score = "Love";
-            if (player1Points==1)
+            if (player1Points==punto15)
                 score = "Fifteen";
             if (player1Points==2)
                 score = "Thirty";
@@ -30,7 +31,7 @@ public class TennisGame2 implements TennisGame
         
         if (player1Points > puntoLove && player2Points==puntoLove)
         {
-            if (player1Points==1)
+            if (player1Points==punto15)
                 player1LiteralScore = "Fifteen";
             if (player1Points==2)
                 player1LiteralScore = "Thirty";
@@ -42,7 +43,7 @@ public class TennisGame2 implements TennisGame
         }
         if (player2Points > puntoLove && player1Points==puntoLove)
         {
-            if (player2Points==1)
+            if (player2Points==punto15)
                 player2LiteralScore = "Fifteen";
             if (player2Points==2)
                 player2LiteralScore = "Thirty";
@@ -59,7 +60,7 @@ public class TennisGame2 implements TennisGame
                 player1LiteralScore="Thirty";
             if (player1Points==3)
                 player1LiteralScore="Forty";
-            if (player2Points==1)
+            if (player2Points==punto15)
                 player2LiteralScore="Fifteen";
             if (player2Points==2)
                 player2LiteralScore="Thirty";
@@ -71,7 +72,7 @@ public class TennisGame2 implements TennisGame
                 player2LiteralScore="Thirty";
             if (player2Points==3)
                 player2LiteralScore="Forty";
-            if (player1Points==1)
+            if (player1Points==punto15)
                 player1LiteralScore="Fifteen";
             if (player1Points==2)
                 player1LiteralScore="Thirty";
