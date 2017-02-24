@@ -8,6 +8,7 @@ public class TennisGame2 implements TennisGame
     private static final int gamePoint = 4;
 	public int player1Points = 0;
     public int player2Points = 0;
+    public String literalScore="";
     
 
 
@@ -28,28 +29,43 @@ public class TennisGame2 implements TennisGame
     }
     
     public String getScore(){
-        if (player1Points == player2Points && player1Points < punto40)
-        	return convertPointsToLiteral(player1Points) + "-All";  
-        if (player1Points==player2Points && player1Points>=punto40)
-            return "Deuce";
-        if (player1Points > puntoLove && player2Points==puntoLove && player1Points<=punto40)
-        	return convertPointsToLiteral(player1Points) + "-Love"; 
-        if (player2Points > puntoLove && player1Points==puntoLove && player2Points<=punto40)
-        	return  "Love-" + convertPointsToLiteral(player2Points); 
-        if (player1Points>player2Points && player1Points < gamePoint)     
-        	return convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
-        if (player2Points>player1Points && player2Points < gamePoint)
-        	return convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
-        if (player1Points > player2Points && player2Points >= punto40 && (player1Points - player2Points == 1) )
-            return "Advantage player1";    
-        if (player2Points > player1Points && player1Points >= punto40 && (player2Points - player1Points == 1))
-            return "Advantage player2";
-        if (player1Points>=gamePoint && player2Points>=puntoLove && ((player1Points-player2Points)>=2))
-            return "Win for player1";
-        if (player2Points>=gamePoint && player1Points>=puntoLove && (player2Points-player1Points)>=2)
-            return "Win for player2";
-        return "";
+    	
+        tiedScore();
+        returnScoreLowerGamePoint();
+        advantageForPlayer();
+        playerWinsGame();
+        return literalScore;
+        
     }
+
+	public void tiedScore() {
+		if (player1Points == player2Points && player1Points < punto40)
+			literalScore=   convertPointsToLiteral(player1Points) + "-All";  
+        if (player1Points==player2Points && player1Points>=punto40)
+        	literalScore=   "Deuce";
+	}
+
+	public void returnScoreLowerGamePoint() {
+		if (player1Points>player2Points && player1Points < gamePoint)     
+			literalScore=  convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
+        if (player2Points>player1Points && player2Points < gamePoint)
+        	literalScore=  convertPointsToLiteral(player1Points) + "-" + convertPointsToLiteral(player2Points);
+	}
+
+	public void advantageForPlayer() {
+		if (player1Points > player2Points && player2Points >= punto40 && (player1Points - player2Points == 1) )
+			literalScore= "Advantage player1";    
+        if (player2Points > player1Points && player1Points >= punto40 && (player2Points - player1Points == 1))
+        	literalScore= "Advantage player2";
+	}
+
+	public void playerWinsGame() {
+		if (player1Points>=gamePoint && player2Points>=puntoLove && ((player1Points-player2Points)>=2))
+            literalScore= "Win for player1";
+        if (player2Points>=gamePoint && player1Points>=puntoLove && (player2Points-player1Points)>=2)
+        	literalScore= "Win for player2";
+        	
+	}
     
     public void SetP1Score(int number){
         
